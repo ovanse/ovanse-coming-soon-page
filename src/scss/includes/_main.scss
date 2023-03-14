@@ -1,0 +1,31 @@
+body {
+  background-color: #333333;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  padding: 10px;
+  .container {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 1024px;
+  }
+  h1,
+  h2 {
+    color: #efc050;
+    text-align: center;
+  }
+  .img {
+    margin: 0 auto;
+    margin: 10px 0;
+    text-align: center;
+    &_footer {
+      margin: 0 auto;
+      width: 10%;
+    }
+  }
+  #text {
+    color: #ff6f61;
+    line-height: 1.5;
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+  }
+}
