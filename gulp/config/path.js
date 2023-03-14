@@ -18,11 +18,7 @@ export const path = {
     font: `${buildFolder}/fonts/`,
   },
   src: {
-    files: [
-      `${srcFolder}/files/**/*.*`,
-      `${srcFolder}/download/**/*.*`,
-      `${srcFolder}/*`,
-    ],
+    files: [`${srcFolder}/*`],
     html: `${srcFolder}/html/*.html`,
     pug: `${srcFolder}/pug/*.pug`,
     scss: `${srcFolder}/scss/style.scss`,
@@ -34,11 +30,7 @@ export const path = {
     font: `${srcFolder}/fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`,
   },
   watch: {
-    files: [
-      `${srcFolder}/files/**/*.*`,
-      `${srcFolder}/downloads/**/*.*`,
-      `${srcFolder}/*`,
-    ],
+    files: [`${srcFolder}/*`],
     html: `${srcFolder}/html/**/*.html`,
     pug: `${srcFolder}/pug/**/*.pug`,
     scss: `${srcFolder}/scss/**/*.scss`,
