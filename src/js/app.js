@@ -35,5 +35,13 @@ window.addEventListener('DOMContentLoaded', () => {
             countMinutes >= 10 ? countMinutes : '0' + countMinutes;
         seconds.innerHTML =
             countSeconds >= 10 ? countSeconds : '0' + countSeconds;
+
+        if (distance < 0) {
+            clearInterval(interval);
+            days.innerHTML = '00';
+            hours.innerHTML = '00';
+            minutes.innerHTML = '00';
+            seconds.innerHTML = '00';
+        }
     }, 1000);
 });
