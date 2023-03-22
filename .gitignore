@@ -1,4 +1,4 @@
-package-lock.json
+**/version.json
 node_modules
 build
 dist
