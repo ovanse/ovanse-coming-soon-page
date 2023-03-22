@@ -1,85 +1,67 @@
 body {
     background: url(../img/01.webp) 50% 50% / cover no-repeat fixed;
+    color: $white-color;
     font-family: Roboto, sans-serif;
     font-weight: 400;
-    color: $white-color;
+    text-align: center;
     .container {
-        background: rgba(11, 11, 11, 0.5);
+        align-items: center;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 20px;
         min-height: 100vh;
-        position: relative;
-        .dark {
-            position: absolute;
-            top: 0;
-            left: 0;
-            min-height: 100vh;
-            min-width: 100%;
-            background: linear-gradient(
-                110deg,
-                rgba(0, 0, 0, 0.75) 0%,
-                rgba(0, 0, 0, 0.75) 70%,
-                rgba(255, 255, 255, 0) 70.2%,
-                rgba(255, 255, 255, 0) 100%
-            );
-            min-height: 100vh;
-        }
-        .copyright {
-            font-size: 16px;
-            color: #1c1c1c;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 40px;
-            position: absolute;
-            background: linear-gradient(
-                110deg,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0) 7%,
-                rgba(255, 255, 255, 0.75) 7.5%,
-                rgba(255, 255, 255, 0.75) 100%
-            );
-            text-align: center;
-            width: 500px;
-        }
         .content {
             align-items: center;
-            margin-left: -300px;
-            position: relative;
-            z-index: 100;
             display: flex;
             flex-direction: column;
+            margin: 0 auto;
             .header {
-                font-size: 80px;
-                margin-top: 100px;
-                line-height: 1;
+                h1 {
+                    font-size: 30px;
+                    margin-top: 50px;
+                }
             }
             .description {
                 border-top: 3px solid $white-color;
                 border-bottom: 3px solid $white-color;
-                font-size: 140px;
+                font-size: 60px;
                 font-weight: 700;
                 margin-top: 70px;
                 text-align: center;
-                line-height: 1;
-                padding: 60px;
+                padding: 20px;
             }
             .counter {
                 margin-top: 50px;
                 display: flex;
                 &__item {
-                    margin: 0 40px;
+                    margin: 0 15px;
                     text-align: center;
                 }
                 .item {
                     &__title {
-                        font-size: 22px;
+                        font-size: 15px;
                         margin-bottom: 10px;
                     }
                     &__digits {
                         border-top: 2px solid $white-color;
-                        font-size: 80px;
+                        font-size: 40px;
                         font-weight: 700;
                     }
                 }
             }
+        }
+        .copyright {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.3);
+            color: #1c1c1c;
+            font-size: 16px;
+            margin-top: 50px;
+            padding: 10px 10px;
+            text-align: center;
+            width: 70%;
         }
     }
 }
