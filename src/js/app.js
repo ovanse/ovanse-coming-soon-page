@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const dueDate = new Date('2023-04-01 00:00:00').getTime();
 
-    const interval = setInterval(() => {
+    const intervalTimer = setInterval(() => {
         const now = new Date().getTime();
 
         const distance = dueDate - now;
@@ -37,11 +37,21 @@ window.addEventListener('DOMContentLoaded', () => {
             countSeconds >= 10 ? countSeconds : '0' + countSeconds;
 
         if (distance < 0) {
-            clearInterval(interval);
+            clearInterval(intervalTimer);
             days.innerHTML = '00';
             hours.innerHTML = '00';
             minutes.innerHTML = '00';
             seconds.innerHTML = '00';
         }
     }, 1000);
+
+    let currentWP = 1;
+    const countWP = 8;
+    const intervalBackground = setInterval(() => {
+        if (currentWP == countWP) {
+            currentWP = 1;
+        }
+        const body = document.querySelector('body');
+        body.style.background = `url(../img/${currentWP++}.webp) 50% 50% / cover no-repeat fixed`;
+    }, 10000);
 });
