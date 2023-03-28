@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 1000);
 
     // Dynamic wallpaper
-    let currentWP = 1;
+    /*  let currentWP = 1;
     const countWP = 8;
     const body = document.querySelector('body');
     body.style.background = `url(../img/${currentWP++}.webp) 50% 50% / cover no-repeat fixed`;
@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
             currentWP = 1;
         }
         body.style.background = `url(../img/${++currentWP}.webp) 50% 50% / cover no-repeat fixed`;
-    }, 10000);
+    }, 10000); */
 
     // Translate
     const language =
