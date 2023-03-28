@@ -1,26 +1,32 @@
-const translateArray = {
+const translate = {
     k_main: {
-        ru: 'Главная',
-        en: 'Main',
+        ru: 'Сайт в разработке',
+        en: 'Site under construction',
     },
-    k_catalog: {
-        ru: 'Каталог',
-        en: 'Catalog',
+    k_soon: {
+        ru: 'Скоро<br>буду',
+        en: 'Coming<br>Soon',
     },
-    k_skills: {
-        ru: 'Навыки',
-        en: 'Skills',
+    k_days: {
+        ru: 'дней',
+        en: 'days',
     },
-    k_portfolio: {
-        ru: 'Портфолио',
-        en: 'Portfolio',
+    k_hours: {
+        ru: 'часов',
+        en: 'hours',
     },
-    k_contacts: {
-        ru: 'Контакты',
-        en: 'Contacts',
+    k_minutes: {
+        ru: 'минут',
+        en: 'minutes',
+    },
+    k_seconds: {
+        ru: 'секунд',
+        en: 'seconds',
     },
     k_pageTitle: {
-        ru: 'Многоязыковой сайт',
-        en: 'Multilanguages site',
+        ru: 'OvAnSe - Скоро буду...',
+        en: 'OvAnSe - Coming Soon Page',
     },
 };
+
+export default translate;
