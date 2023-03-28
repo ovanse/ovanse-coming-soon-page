@@ -8,16 +8,15 @@ import { plugins } from './gulp/config/plugins.js';
 import { config } from './gulp/config/config.js';
 // Передаем значения в глобальную переменную для удобства
 global.app = {
-  path: path,
-  gulp: gulp,
-  plugins: plugins,
-  config: config,
+    path: path,
+    gulp: gulp,
+    plugins: plugins,
+    config: config,
 };
 
 // Импорт задач
 import { clear } from './gulp/tasks/clear.js';
 import { copy } from './gulp/tasks/copy.js';
-import { html } from './gulp/tasks/html.js';
 import { pug } from './gulp/tasks/pug.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
@@ -29,28 +28,28 @@ import { server } from './gulp/tasks/server.js';
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
-  app.gulp.watch(app.path.watch.files, copy);
-  app.config.usePUG
-    ? app.gulp.watch(app.path.watch.pug, pug)
-    : app.gulp.watch(app.path.watch.html, html);
-  app.gulp.watch(app.path.watch.scss, scss);
-  app.gulp.watch(app.path.watch.js, app.gulp.series(js, jsLib));
-  app.gulp.watch(app.path.watch.php, php);
-  app.gulp.watch(app.path.watch.img, img);
-  app.gulp.watch(app.path.watch.font, font);
+    app.gulp.watch(app.path.watch.files, copy);
+    app.config.usePUG
+        ? app.gulp.watch(app.path.watch.pug, pug)
+        : app.gulp.watch(app.path.watch.html, html);
+    app.gulp.watch(app.path.watch.scss, scss);
+    app.gulp.watch(app.path.watch.js, app.gulp.series(js, jsLib));
+    app.gulp.watch(app.path.watch.php, php);
+    app.gulp.watch(app.path.watch.img, img);
+    app.gulp.watch(app.path.watch.font, font);
 }
 
 // Формируем список тасков для выполнения
 const markup = app.config.usePUG ? pug : html;
 const mainTasks = app.gulp.parallel(
-  copy,
-  markup,
-  scss,
-  js,
-  jsLib,
-  php,
-  img,
-  font
+    copy,
+    markup,
+    scss,
+    js,
+    jsLib,
+    php,
+    img,
+    font
 );
 // Для Build
 const build = app.gulp.series(clear, mainTasks);

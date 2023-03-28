@@ -1,12 +1,9 @@
-// import * as oas from './includes/sum.js'
-
-// console.log(oas.mySum(2, 10))
-// console.log(oas.mySum(10, 5))
+import translate from './includes/translate.js';
 
 window.addEventListener('DOMContentLoaded', () => {
     // Set actual year
-    const cYear = document.querySelector('.copyright span');
-    cYear.innerHTML = new Date().getFullYear();
+    const copyrightYear = document.querySelector('.copyright span');
+    copyrightYear.innerHTML = new Date().getFullYear();
 
     // Countdown
     const days = document.querySelector('.daysDigits');
@@ -45,13 +42,28 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }, 1000);
 
+    // Dynamic wallpaper
     let currentWP = 1;
     const countWP = 8;
+    const body = document.querySelector('body');
+    body.style.background = `url(../img/${currentWP++}.webp) 50% 50% / cover no-repeat fixed`;
     const intervalBackground = setInterval(() => {
         if (currentWP == countWP) {
             currentWP = 1;
         }
-        const body = document.querySelector('body');
-        body.style.background = `url(../img/${currentWP++}.webp) 50% 50% / cover no-repeat fixed`;
+        body.style.background = `url(../img/${++currentWP}.webp) 50% 50% / cover no-repeat fixed`;
     }, 10000);
+
+    // Translate
+    const language =
+        (navigator.language || navigator.userLanguage).split('-')[0] != 'ru'
+            ? 'en'
+            : 'ru';
+    document.querySelector('html').setAttribute('lang', language);
+    document.querySelector('title').innerHTML =
+        translate['k_pageTitle'][language];
+    document.querySelectorAll('[data-translate]').forEach((elem) => {
+        const languageKey = elem.getAttribute('data-lang');
+        elem.innerHTML = translate[languageKey][language];
+    });
 });
